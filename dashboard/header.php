@@ -1,1 +1,3 @@
-<?php echo "header"; ?>
+<header>
+    <nav></nav>
+</header>
