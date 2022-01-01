@@ -115,7 +115,6 @@
             </div>
         </section>
     </main>
-    <?php include_once 'footer.php'; ?>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/all.min.js"></script>
     <script src="../js/app.js"></script>
