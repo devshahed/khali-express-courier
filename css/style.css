@@ -9,6 +9,10 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
+nav ul li a, nav p{
+    font-weight: 500;
+    font-size: 0.9rem;
+}
 section{
     padding: 80px 0;
 }

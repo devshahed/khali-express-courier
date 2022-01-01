@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8">
-                        <form action="?" method="POST">
+                        <form action="?" method="POST" class="mb-4">
                             <div class="mb-3">
                                 <label class="mb-1">Mailbox #</label>
                                 <input class="form-control" style="background: #c5c9cc;" type="text" value="226" disabled readonly>
