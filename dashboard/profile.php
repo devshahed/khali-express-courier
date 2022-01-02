@@ -65,7 +65,7 @@
                                     <input id="email" class="form-control bg-transparent" type="email" name="email" value="Greater Portmore">
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <input type="submit" name="update" value="Update" class="text-white bg-danger outline-none rounded-pill px-3 py-2 border-0">
+                                    <input type="submit" name="update" value="Update" class="text-white bg-theme outline-none rounded-pill px-3 py-2 border-0">
                                 </div>
                             </form>
                             <form action="?" method="POST">
@@ -83,7 +83,7 @@
                                     <input id="confirmPass" class="form-control bg-transparent" type="password" name="confirm-pass">
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <input type="submit" name="change" value="Change" class="text-white bg-danger outline-none rounded-pill px-3 py-2 border-0">
+                                    <input type="submit" name="change" value="Change" class="text-white bg-theme outline-none rounded-pill px-3 py-2 border-0">
                                 </div>
                             </form>
                         </div>
@@ -95,7 +95,7 @@
                                     <p class="mb-0">1 year ago</p>
                                 </div>
                             </div>
-                            <div class="p-3 rounded-2 my-3 bg-danger">
+                            <div class="p-3 rounded-2 my-3 bg-theme">
                                 <p>Total Items Shipped</p>
                                 <div class="d-flex justify-content-between align-tems-center">
                                     <i class="fas fa-box fa-2x d-block"></i>

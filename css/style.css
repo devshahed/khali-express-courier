@@ -2,16 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300&display=swap');
 
 /* ====================================== */
-
+:root{
+    --theme-color: purple;
+}
 
 
 /* ============= Tags & Global Class =================== */
 body{
     font-family: 'Poppins', sans-serif;
 }
+header{
+    border-bottom: 1px solid rgba(78, 78, 78, 0.198);
+    box-shadow: 0px 3px 10px rgba(78, 78, 78, 0.527);
+}
 nav ul li a, nav p{
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 section{
     padding: 80px 0;
@@ -20,7 +26,12 @@ section{
     font-size: 2.6rem;
     font-weight: 600;
 }
-
+.bg-theme{
+    background: var(--theme-color);
+}
+.text-theme-color{
+    color: var(--theme-color);
+}
 /* ============= Registration =================== */
 #register{
     background-image: linear-gradient(#f32832b0, #f32832b0), url('../images/registration.jpg');
@@ -34,6 +45,9 @@ section{
 }
 
 /* ============= Login =================== */
-#register{
-    background-image: linear-gradient(#f32832b0, #f32832b0), url('../images/registration.jpg');
+#login{
+    background-image: linear-gradient(rgba(163, 0, 163, 0.767), rgba(163, 0, 163, 0.767)), url('../images/registration.jpg');
+}
+#login input, #login input::placeholder{
+    color: white;
 }

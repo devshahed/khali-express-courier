@@ -38,7 +38,7 @@
                             <h6>Ready for pickup/delivery</h6>
                             <table class="w-100 my-3">
                                 <thead>
-                                    <tr class="bg-danger text-white">
+                                    <tr class="bg-theme text-white">
                                         <th class="p-2">Tracking</th>
                                         <th class="p-2">Sender</th>
                                         <th class="p-2">Date Arrived</th>
@@ -56,7 +56,7 @@
                             <h6>In Transit</h6>
                             <table class="w-100 my-3">
                                 <thead>
-                                    <tr class="bg-danger text-white">
+                                    <tr class="bg-theme text-white">
                                         <th class="p-2">Tracking</th>
                                         <th class="p-2">Sender</th>
                                         <th class="p-2">Weight (lb)</th>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="col-lg-4 col-12 my-3">
                             <div class="border border-secondary">
-                                <h5 class="text-center bg-danger text-white p-2">Shipping Address</h5>
+                                <h5 class="text-center bg-theme text-white p-2">Shipping Address</h5>
                                 <p class="mn-0 p-2">Mailbox #: <span>DITE 226</span></p>
                                 <hr>
                                 <div class="p-2">

@@ -14,105 +14,38 @@
     <body>
         <?php include_once 'header.php'; ?>
         <main>
-            <!-- ================= Dashboard ================ -->
-            <section id="dashboard">
+            <!-- ================= Invoice ================ -->
+            <section id="invoice">
                 <div class="container">
-                    <h4 class="text-center">Dashboard</h4>
+                    <h4 class="text-center">Upload Invoice</h4>
                     <hr>
-                    <div class="row py-4 my-4 text-center">
-                        <div class="col-4">
-                            <h5>Ready For Delivery</h5>
-                            <p>0</p>
+                    <form action="?" method="POST">
+                        <div class="mb-3">
+                            <label for="courier" class="mb-1">Courier</label>
+                            <select name="courier" id="courier">
+                                <option disabled>Courier</option>
+                                <option selected disabled>Select Courier</option>
+                                <option value="China Post">China Post</option>
+                                <option value="China Post">China Post</option>
+                                <option value="China Post">China Post</option>
+                            </select>
                         </div>
-                        <div class="col-4">
-                            <h5>In Transit</h5>
-                            <p>0</p>
+                        <div class="mb-3">
+                            <label for="tracking" class="mb-1">Tracking</label>
+                            <input id="tracking" class="form-control bg-transparent" type="text" name="tracking">
                         </div>
-                        <div class="col-4">
-                            <h5>Current Balance</h5>
-                            <p>&#36; <span>0.00</span></p>
+                        <div class="mb-3">
+                            <label for="description" class="mb-1">Description</label>
+                            <input id="description" class="form-control bg-transparent" type="text" name="description">
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-8 col-12">
-                            <h6>Ready for pickup/delivery</h6>
-                            <table class="w-100 my-3">
-                                <thead>
-                                    <tr class="bg-danger text-white">
-                                        <th class="p-2">Tracking</th>
-                                        <th class="p-2">Sender</th>
-                                        <th class="p-2">Date Arrived</th>
-                                        <th class="p-2">Weight (lb)</th>
-                                        <th class="p-2">Description</th>
-                                        <th class="p-2">Invoice</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <h6>In Transit</h6>
-                            <table class="w-100 my-3">
-                                <thead>
-                                    <tr class="bg-danger text-white">
-                                        <th class="p-2">Tracking</th>
-                                        <th class="p-2">Sender</th>
-                                        <th class="p-2">Weight (lb)</th>
-                                        <th class="p-2">Description</th>
-                                        <th class="p-2">Location</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="p-2">8031611</td>
-                                        <td class="p-2">AMAZON FULFILLMENT SERVICE</td>
-                                        <td class="p-2">1.15</td>
-                                        <td class="p-2">Merchandise</td>
-                                        <td class="p-2">Florida</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="mb-3">
+                            <label class="mb-1">Attach Invoice(s)</label>
+                            <input id="invoiceFile" type="file" name="invoiceFile">
                         </div>
-                        <div class="col-lg-4 col-12 my-3">
-                            <div class="border border-secondary">
-                                <h5 class="text-center bg-danger text-white p-2">Shipping Address</h5>
-                                <p class="mn-0 p-2">Mailbox #: <span>DITE 226</span></p>
-                                <hr>
-                                <div class="p-2">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">Name:</p>
-                                        <p class="mb-0">Simone Reid</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">Address 1:</p>
-                                        <p class="mb-0">1946 NW 54th Ave</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">Address 2:</p>
-                                        <p class="mb-0">DITE 226</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">City:</p>
-                                        <p class="mb-0">Margate</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">Florida</p>
-                                        <p class="mb-0">Simone Reid</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">Zip:</p>
-                                        <p class="mb-0">33063</p>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <p class="mb-0">Country:</p>
-                                        <p class="mb-0">United States</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <input type="Submit" name="Submit" value="Submit" class="text-white bg-theme outline-none rounded-pill px-3 py-2 border-0">
                         </div>
-                    </div>
+                    </form>
                 </div>
             </section>
         </main>
