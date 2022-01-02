@@ -32,3 +32,8 @@ section{
 #register input, #register input::placeholder{
     color: white;
 }
+
+/* ============= Login =================== */
+#register{
+    background-image: linear-gradient(#f32832b0, #f32832b0), url('../images/registration.jpg');
+}

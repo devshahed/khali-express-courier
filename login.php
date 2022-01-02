@@ -16,7 +16,7 @@
     <?php include_once 'header.php'; ?>
     <main>
         <!-- ================= Login ================ -->
-        <section id="register" class="background-no-repeat background-cover background-fixed background-center">
+        <section id="login" class="background-no-repeat background-cover background-fixed background-center">
             <div class="container">
                 <h2 class="text-center text-white mb-4 section-header">Login</h2>
                 <form class="row w-75 mx-auto" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
