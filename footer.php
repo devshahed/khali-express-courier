@@ -1,6 +1,6 @@
-<footer class="pt-4 text-dark">
+<footer class="text-dark">
     <div class="container">
-        <div class="row">
+        <div class="py-4 row">
             <div class="col-md-6 col-12">
                 <div class="px-5">
                     <img src="../images/logotransparent.png" alt="">
@@ -24,9 +24,9 @@
             </div>
         </div>
     </div>
-    <div class="row py-2 bg-indigo text-white text-center w-100 m-0">
+    <div class="row py-2 footer-bg text-white text-center w-100 m-0">
         <div class="col-md-6 col-12">
-            <p class="mb-0">Designed by <a href="https://www.facebook.com/its.devshahed" target="_blank">Devshahed</a></p>
+            <p class="mb-0">Designed by <a class="text-decoration-none" href="https://www.facebook.com/its.devshahed" target="_blank">Devshahed</a></p>
         </div>
         <div class="col-md-6 col-12">
             <p class="mb-0">&copy 2022 Khali Express Courier All rights reserved</p>
