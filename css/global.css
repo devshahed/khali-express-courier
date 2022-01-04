@@ -15,8 +15,14 @@
 .background-no-repeat{
     background-repeat: no-repeat!important;
 }
+.bg-indigo{
+    background: var(--bs-indigo);
+}
 .text-small{
     font-size: 0.8rem;
+}
+.text-bold{
+    font-weight: 600;
 }
 .outline-none{
     outline: none;
