@@ -64,7 +64,7 @@
                             <input type="password" placeholder="Confirm Password*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" required>
                         </div>
                         <div class="col-12 d-flex justify-content-center align-items-center">
-                            <input id="registerBtn" type="submit" name="register" value="Register" class="my-2 px-3 py-2 rounded-pill text-danger bg-white outline-none border-0">
+                            <input id="registerBtn" type="submit" name="register" value="Register" class="my-2 px-3 py-2 rounded-pill text-theme-color bg-white outline-none border-0">
                         </div>
                     </form>
                     <div class="text-white text-center pt-3 h6">Already a member? <a href="login.php" class="text-decoration-none text-primary">Login</a></div>
