@@ -1,6 +1,3 @@
-<?php
-    include_once 'util.php';
-?>
 <header class="position-fixed top-0 left-0 w-100 bg-white text-theme-color d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center p-3">
         <a href="/" class="me-3 d-block"><img src="/images/logotransparent.png" alt="logo" width="100" height=""></a>
