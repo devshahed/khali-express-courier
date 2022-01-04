@@ -18,8 +18,8 @@
             <!-- ================= Home ================ -->
             <section id="home" class="background-no-repeat background-cover background-fixed background-center">
                 <div class="container text-center d-flex justify-content-center align-items-center h-100 text-white flex-column">
-                    <h1 class="display-md-1 display-3">Lorem ipsum dolor sit amet.</h5>
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                    <h1 class="display-md-1 display-3">Khali Express Courier</h5>
+                    <h5>Service time: Monday - Saturdays 9am-5pm</h4>
                     <a class="text-white py-2 px-3 rounded-pill text-decoration-none text-bold bg-theme mt-5" href="#about">Learn More</a>
                 </div>
             </section>

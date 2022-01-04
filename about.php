@@ -1,7 +1,7 @@
 <!-- ================= Home ================ -->
 <section id="about"  class="bg-indigo text-white">
     <div class="container">
-        <h2 class="text-center pb-3">About us</h2>
+        <h2 class="text-center text-white mb-4 section-heading">About us</h2>
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-6 col-12">
                 <div class="p-3">

@@ -23,7 +23,7 @@ section{
     justify-content: center;
     align-items: center;
 }
-.section-header{
+.section-heading{
     font-size: 2.6rem;
     font-weight: 600;
 }
@@ -64,4 +64,12 @@ section{
 /* ==================== Footer ===================== */
 .footer-bg{
     background: #0a060f;
+}
+
+/* ==================== Contact ===================== */
+#map{
+    height: 40vh;
+}
+.contact-icon{
+    font-size: 4rem;
 }
