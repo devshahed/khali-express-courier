@@ -11,15 +11,15 @@
                 <hr class="my-2">
                 <div class="py-1 d-flex align-items-center">
                     <i class="fa fa-map-marker d-block me-2 text-small" aria-hidden="true"></i>
-                    <p class="mb-0 text-small text-bold">1B Marliemount Ave, Pembroke Hall, Kingston 20.</p>
+                    <p class="mb-0 text-small text-bold">603 Braeton Newtown  Portmore, St. Catherine Jamaica W.I</p>
                 </div>
                 <div class="py-1 d-flex align-items-center">
                     <i class="fa fa-phone d-block me-2 text-small" aria-hidden="true"></i>
-                    <p class="mb-0 text-small text-bold">0153455435353</p>
+                    <p class="mb-0 text-small text-bold">876-840-9703, 876-895-9829</p>
                 </div>
                 <div class="py-1 d-flex align-items-center">
                     <i class="fa fa-envelope d-block me-2 text-small" aria-hidden="true"></i>
-                    <p class="mb-0 text-small text-bold">info@kec.com</p>
+                    <p class="mb-0 text-small text-bold">khaliexpresscourier@gmail.com</p>
                 </div>
             </div>
         </div>

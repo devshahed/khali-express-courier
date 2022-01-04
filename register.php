@@ -19,7 +19,7 @@
             <section id="register" class="background-no-repeat background-cover background-fixed background-center">
                 <div class="container">
                     <h2 class="text-center text-white mb-4 section-heading">Registration</h2>
-                    <form class="row" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <form class="row" action="<?php echo $hostname . "/add-user.php"; ?>" method="POST">
                         <div class="col-md-6 col-12 p-2">
                             <input type="text" name="fname" placeholder="First Name*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" required>
                         </div>

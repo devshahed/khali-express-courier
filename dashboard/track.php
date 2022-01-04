@@ -20,7 +20,7 @@
                     <h4 class="text-center">Track</h4>
                     <hr>
                     <div class="row">
-                        <div class="col-xl-6 col-12">
+                        <div class="col-12">
                             <h6>Ready for pickup/delivery</h6>
                             <table class="w-100 mb-4">
                                 <thead>
@@ -30,7 +30,7 @@
                                         <th class="p-2">Date Arrived</th>
                                         <th class="p-2">Weight (lb)</th>
                                         <th class="p-2">Description</th>
-                                        <th class="p-2">Invoice</th>
+                                        <th class="p-2">Item Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,9 +60,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="col-xl-6 col-12 mb-3">
-                            <h6>In Transit</h6>
+                            <h6>Recently Shipped Items</h6>
                             <table class="w-100 mb-4">
                                 <thead>
                                     <tr class="bg-theme text-white">
@@ -70,7 +68,9 @@
                                         <th class="p-2">Sender</th>
                                         <th class="p-2">Weight (lb)</th>
                                         <th class="p-2">Description</th>
-                                        <th class="p-2">Location</th>
+                                        <th class="p-2">Status</th>
+                                        <th class="p-2">Delivery Date</th>
+                                        <th class="p-2">Invoice</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -79,7 +79,11 @@
                                         <td class="p-2">AMAZON FULFILLMENT SERVICE</td>
                                         <td class="p-2">1.15</td>
                                         <td class="p-2">Merchandise</td>
-                                        <td class="p-2">Florida</td>
+                                        <td class="p-2">Delivered</td>
+                                        <td class="p-2">01/01/2022</td>
+                                        <td class="p-2">
+                                            <i class="far fa-file-pdf text-theme-color cursor-pointer" data-toggle="tooltip" data-placement="top" title="View Invoice"></i>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

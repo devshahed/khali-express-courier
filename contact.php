@@ -41,17 +41,17 @@
                         </div>
                     </form>
                     <div class="row pt-5 justify-content-between align-items-center">
-                        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
+                        <div class="my-3 col-md-4 col-12 d-flex flex-column justify-content-center align-items-center">
                             <a href="mailto: khaliexpresscourier@gmail.com" class="d-block overflow-hidden rounded-circle"><i class="fas fa-envelope contact-icon rounded-circle bg-indigo text-white p-3 border border-3 border-white"></i></a>
-                            <p class="mb-0 text-white">khaliexpresscourier@gmail.com</p>
+                            <p class="mb-0 text-white mt-2">khaliexpresscourier@gmail.com</p>
                         </div>
-                        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-                            <a href="mailto: khaliexpresscourier@gmail.com" class="d-block overflow-hidden rounded-circle"><i class="fas fa-envelope contact-icon rounded-circle bg-indigo text-white p-3 border border-3 border-white"></i></a>
-                            <p class="mb-0 text-white">khaliexpresscourier@gmail.com</p>
+                        <div class="my-3 col-md-4 col-12 d-flex flex-column justify-content-center align-items-center">
+                            <a href="telephone: 876-840-9703" class="d-block overflow-hidden rounded-circle"><i class="fas fa-phone-alt contact-icon rounded-circle bg-indigo text-white p-3 border border-3 border-white"></i></a>
+                            <p class="mb-0 text-white mt-2">876-840-9703, 876-895-9829</p>
                         </div>
-                        <div class="col-4 d-flex flex-column justify-content-center align-items-center">
-                            <a href="mailto: khaliexpresscourier@gmail.com" class="d-block overflow-hidden rounded-circle"><i class="fas fa-envelope contact-icon rounded-circle bg-indigo text-white p-3 border border-3 border-white"></i></a>
-                            <p class="mb-0 text-white">khaliexpresscourier@gmail.com</p>
+                        <div class="my-3 col-md-4 col-12 d-flex flex-column justify-content-center align-items-center">
+                            <a href="mailto: khaliexpresscourier@gmail.com" class="d-block overflow-hidden rounded-circle"><i class="fas fa-map-marked contact-icon rounded-circle bg-indigo text-white p-3 border border-3 border-white"></i></a>
+                            <p class="mb-0 text-white mt-2">603 Braeton Newtown  Portmore, St. Catherine Jamaica W.I</p>
                         </div>
                     </div>
                 </div>
