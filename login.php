@@ -1,3 +1,16 @@
+<?php
+    include 'util.php';
+    if(isset($_POST['login'])){
+        $email = test_input($_POST['email']);
+        $pass = md5(test_input($_POST['password']));
+        
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            echo $email;
+            echo $pass;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en-us">
 

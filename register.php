@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['phone_error'])){ echo $errors['phone_error']; } ?></span>
-                            <input type="text" name="phone" placeholder="Telephone #1*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" >
+                            <input type="text" name="phone" placeholder="Telephone (with country code)*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" >
                         </div>
                         <div class="col-md-4 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['addr_error'])){ echo $errors['addr_error']; } ?></span>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="col-md-4 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['city_error'])){ echo $errors['city_error']; } ?></span>
-                            <input type="text" name="city" placeholder="City" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent">
+                            <input type="text" name="city" placeholder="City*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent">
                         </div>
                         <div class="col-md-4 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['parish_error'])){ echo $errors['parish_error']; } ?></span>
