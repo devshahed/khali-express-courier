@@ -1,12 +1,35 @@
 <?php
     include 'util.php';
+    require_once("db.php");
+    session_start();
+    session_regenerate_id();
+    if(isset($_SESSION['verified'])){
+        header("Location: {$hostname}/dashboard");
+    }
     if(isset($_POST['login'])){
-        $email = test_input($_POST['email']);
+        $email = $conn->real_escape_string(test_input($_POST['email']));
         $pass = md5(test_input($_POST['password']));
         
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            echo $email;
-            echo $pass;
+            $sql = "SELECT * FROM users WHERE email = '{$email}' AND password = '{$pass}'";
+            $result = $conn->query($sql);
+            if($result->num_rows == 1){
+                while($row = $result->fetch_assoc()){
+                    if($row['verified'] != 1){
+                        header("Location: thankyou.php");
+                    }else{
+                        $_SESSION['uid'] = $row['id'];
+                        $_SESSION['username'] = $row['first_name'] . $row['last_name'];
+                        $_SESSION['email'] = $row['email'];
+                        $_SESSION['verified'] = $row['verified'];
+                        header("Location: {$hostname}/dashboard");
+                    }
+                }
+            }else{
+               $error = "Username or password was incorrect"; 
+            }
+        }else{
+            $error = "Invalid email address";
         }
     }
 ?>
@@ -34,6 +57,11 @@
                     <h2 class="text-center text-white mb-4 section-heading">Login</h2>
                     <form class="row w-75 mx-auto" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                         <div class="col-12 p-2">
+                            <p style="color: orange"><?php
+                                if(isset($error)){
+                                    echo $error;
+                                }
+                            ?></p>
                             <input type="email" name="email" placeholder="Email*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" required>
                         </div>
                         <div class="col-12 p-2">

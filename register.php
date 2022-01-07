@@ -1,5 +1,11 @@
 <?php
     include_once 'util.php';
+    require_once("db.php");
+    session_start();
+    session_regenerate_id();
+    if(isset($_SESSION['verified'])){
+        header("Location: {$hostname}/dashboard");
+    }
     if(isset($_POST['register'])){
         $errors = array('fname_error' => null, 'lname_error' => null, 'email_error' => null, 'phone_error' => null, 'addr_error' => null, 'city_error' => null, 'parish_error' => null, 'trn_error' => null, 'pickup_error' => null, 'password_error' => null);
         $fname = test_input($_POST['fname']);
@@ -32,8 +38,12 @@
             $errors['lname_error'] = "Please enter a last name";
         }
         if(!empty($email)){
+            $sql_email = "SELECT email FROM users WHERE email = '{$email}'";
+            $result_email = $conn->query($sql_email);
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $errors['email_error'] = "Please enter a valid email";
+            }elseif($result_email->num_rows != 0){
+                $errors['email_error'] = "This email has already registered";
             }
         }else{
             $errors['email_error'] = "Please enter email address";
@@ -79,7 +89,6 @@
 
         //INSERT INTO DATABASE
         if(count(array_unique($errors)) === 1) {
-            require_once("db.php");
             $sql = "INSERT INTO users (first_name, last_name, email, phone, street_addr, city, parish, trn, password, vkey) VALUES ('{$fname}', '{$lname}', '{$email}', '{$phone}', '{$street_addr}', '{$city}', '{$parish}', '{$trn}', '{$pass}', '{$vkey}')";
             if($conn->query($sql)){
                 $to = $email;

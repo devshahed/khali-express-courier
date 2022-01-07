@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include_once "../util.php";
+    include_once "../db.php";
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -21,40 +26,47 @@
                     <div class="row">
                         <div class="col-8">
                             <form action="?" method="POST" class="mb-4">
+                            <?php
+                                $uid = $_SESSION['uid'];
+                                $sql = "SELECT * FROM users WHERE id = $uid";
+                                $result = $conn->query($sql);
+                                if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()){
+                            ?> 
                                 <div class="mb-3">
-                                    <label class="mb-1">Mailbox #</label>
-                                    <input class="form-control" style="background: #c5c9cc;" type="text" value="226" disabled readonly>
+                                    <label class="mb-1">KEC UID #</label>
+                                    <input class="form-control" style="background: #c5c9cc;" type="text" value="KEC<?php echo $row['id']; ?>" disabled readonly>
                                 </div>
                                 <div class="mb-3">
                                     <label for="fname" class="mb-1">First Name</label>
-                                    <input id="fname" class="form-control bg-transparent" type="text" name="fname" value="Simone">
+                                    <input id="fname" class="form-control bg-transparent" type="text" name="fname" value="<?php echo $row['first_name']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="lname" class="mb-1">Last Name</label>
-                                    <input id="lname" class="form-control bg-transparent" type="text" name="lname" value="Reid">
+                                    <input id="lname" class="form-control bg-transparent" type="text" name="lname" value="<?php echo $row['last_name']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="phone" class="mb-1">Phone</label>
-                                    <input id="phone" class="form-control bg-transparent" type="text" name="Phone" value="826293****">
+                                    <input id="phone" class="form-control bg-transparent" type="text" name="Phone" value="<?php echo $row['phone']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="trn" class="mb-1">TRN</label>
-                                    <input id="trn" class="form-control bg-transparent" type="text" name="trn" value="122121678">
+                                    <input id="trn" class="form-control bg-transparent" type="text" name="trn" value="<?php echo $row['trn']; ?>">
                                 </div>
                                 <h5 class="mb-3">Primary Address</h5>
                                 <div class="mb-3">
                                     <label for="addr" class="mb-1">Address</label>
-                                    <input id="addr" class="form-control bg-transparent" type="text" name="address" value="603 Walkway 23, Braeton  Newtown">
+                                    <input id="addr" class="form-control bg-transparent" type="text" name="address" value="<?php echo $row['street_addr']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="city" class="mb-1">City</label>
-                                    <input id="city" class="form-control bg-transparent" type="text" name="city" value="Greater Portmore">
+                                    <input id="city" class="form-control bg-transparent" type="text" name="city" value="<?php echo $row['city']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="parish" class="mb-3">Parish</label>
                                     <select name="parish" id="parish">
                                         <option disabled>Select Parish</option>
-                                        <option selected value="St.Catherine">St.Catherine</option>
+                                        <option selected value="St.Catherine"><?php echo $row['parish']; ?></option>
                                         <option value="St.Catherine">St.Catherine</option>
                                         <option value="St.Catherine">St.Catherine</option>
                                         <option value="St.Catherine">St.Catherine</option>
@@ -62,11 +74,13 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="mb-1">Email</label>
-                                    <input id="email" class="form-control bg-transparent" type="email" name="email" value="Greater Portmore">
+                                    <input id="email" class="form-control bg-transparent" type="email" name="email" value="<?php echo $row['email']; ?>">
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <input type="submit" name="update" value="Update" class="text-white bg-theme outline-none rounded-pill px-3 py-2 border-0">
+                                    <a href="deleteuser.php" class=" text-decoration-none ms-2 text-white bg-theme outline-none rounded-pill px-3 py-2 border-0">Delete Account</a>
                                 </div>
+                            <?php   } } ?>
                             </form>
                             <form action="?" method="POST">
                                 <h4>Password Management</h4>
@@ -88,27 +102,12 @@
                             </form>
                         </div>
                         <div class="col-4 d-flex flex-column text-white">
-                            <div class="p-3 rounded-2 my-3 bg-primary">
-                                <p>Member Since (2020-06-28)</p>
-                                <div class="d-flex justify-content-between align-tems-center">
-                                    <i class="fas fa-calendar-alt fa-2x d-block"></i>
-                                    <p class="mb-0">1 year ago</p>
-                                </div>
-                            </div>
                             <div class="p-3 rounded-2 my-3 bg-theme">
                                 <p>Total Items Shipped</p>
                                 <div class="d-flex justify-content-between align-tems-center">
                                     <i class="fas fa-box fa-2x d-block"></i>
                                     <p class="mb-0">0</p>
                                 </div>
-                            </div>
-                            <div class="p-3 rounded-2 my-3 bg-success">
-                                <p>Authorize Pickup</p>
-                                <div class="d-flex justify-content-between align-tems-center">
-                                    <i class="fas fa-lock-open fa-2x d-block"></i>
-                                    <p class="mb-0">0</p>
-                                </div>
-                                <p class="mb-0 mt-2"><a href="#" class="text-white text-decoration-none">Add/Update</a></p>
                             </div>
                         </div>
                     </div>
