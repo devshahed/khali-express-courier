@@ -8,7 +8,7 @@
         if($result->num_rows == 1){
             $sql_verify = "UPDATE users SET verified = 1 WHERE vkey = '{$vkey}'";
             if($conn->query($sql_verify)){
-                header("Location: /login.php");
+                exit(header("Location: /login.php"));
             }
         }else{
             echo "<h4>The email has already verified.</h4>";

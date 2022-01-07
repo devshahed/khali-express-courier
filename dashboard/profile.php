@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!isset($_SESSION['verified'])){
+        exit(header("Location: /login.php"));
+    }
     include_once "../util.php";
     include_once "../db.php";
 ?>
@@ -66,10 +69,7 @@
                                     <label for="parish" class="mb-3">Parish</label>
                                     <select name="parish" id="parish">
                                         <option disabled>Select Parish</option>
-                                        <option selected value="St.Catherine"><?php echo $row['parish']; ?></option>
-                                        <option value="St.Catherine">St.Catherine</option>
-                                        <option value="St.Catherine">St.Catherine</option>
-                                        <option value="St.Catherine">St.Catherine</option>
+                                        <option selected value="<?php echo $row['parish']; ?>"><?php echo $row['parish']; ?></option>
                                     </select>
                                 </div>
                                 <div class="mb-3">

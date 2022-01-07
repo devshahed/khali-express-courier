@@ -8,9 +8,9 @@
         if($conn->query($sql)){
             session_unset();
             session_destroy();
-            header("Location: {$hostname}/register.php");
+            exit(header("Location: {$hostname}/register.php"));
         }
     }else{
-        header("Location: {$hostname}/login.php");
+        exit(header("Location: {$hostname}/login.php"));
     }
 ?>

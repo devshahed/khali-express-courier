@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['verified'])){
+        exit(header("Location: /login.php"));
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en-us">
     <head>

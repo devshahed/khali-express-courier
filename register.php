@@ -1,10 +1,9 @@
 <?php
+    session_start();
     include_once 'util.php';
     require_once("db.php");
-    session_start();
-    session_regenerate_id();
     if(isset($_SESSION['verified'])){
-        header("Location: {$hostname}/dashboard");
+        exit(header("Location: {$hostname}/dashboard"));
     }
     if(isset($_POST['register'])){
         $errors = array('fname_error' => null, 'lname_error' => null, 'email_error' => null, 'phone_error' => null, 'addr_error' => null, 'city_error' => null, 'parish_error' => null, 'trn_error' => null, 'pickup_error' => null, 'password_error' => null);
@@ -18,7 +17,7 @@
         $parish = filter_var(test_input($_POST['parish']), FILTER_SANITIZE_STRING);
         $trn = test_input($_POST['trn']);
         $password = test_input($_POST['password']);
-        $pass = md5($password);
+        $pass = sha1(str_replace("x", "a", md5($password)));
         $confirm_password = test_input($_POST['confirm-password']);
 
         $vkey = md5($email . uniqid());
@@ -91,19 +90,33 @@
         if(count(array_unique($errors)) === 1) {
             $sql = "INSERT INTO users (first_name, last_name, email, phone, street_addr, city, parish, trn, password, vkey) VALUES ('{$fname}', '{$lname}', '{$email}', '{$phone}', '{$street_addr}', '{$city}', '{$parish}', '{$trn}', '{$pass}', '{$vkey}')";
             if($conn->query($sql)){
+                $link = $hostname . "/verify.php?vkey=" . $vkey;
                 $to = $email;
                 $subject = "Verify your email address";
-                $message = "<h2>Hello, Please click on verify to confirm your registration. Thank you</h2><div style='display: flex; justify-content: center; align-items: center'><a style='color: white; background: tomato; padding: 10px 15px; text-align: center; margin: 30px 0' href='{$hostname}/verify.php?vkey={$vkey}'</div>";
-                $header = "From: khaliexpresscourier@gmail.com";
-                $header .= "Content-Type: text/html";
+                $message = "<!DOCTYPE html>
+                <html lang=\"en\">
+                <head>
+                    <meta charset=\"UTF-8\">
+                    <title>Thank you for registration</title>
+                </head>
+                <body>
+                    <h2>Thank you for registration, click here to active your account: </h2>
+                    <a style=\"color: white; background: orange; padding: 5px 10px; text-decoration: none;\" href=\"$link\">Verify</a>
+                    <p>or go to this link: $link</p>
+                </body>
+                </html>";
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                $headers .= "From: khaliexpresscourier@gmail.com" . "\r\n";
 
-                if(mail($to, $subject, $message, $header)){
-                    header("Location: thankyou.php");
+                if(mail($to, $subject, $message, $headers)){
+                    exit(header("Location: ./thankyou.php"));
                 }
             }
         }
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -154,9 +167,7 @@
                             <span style="color:orange"><?php if(isset($errors['parish_error'])){ echo $errors['parish_error']; } ?></span>
                             <select name="parish" class="w-100 outline-none border border-white border-3 p-2 rounded-2">
                                 <option selected value="">Select Parish</option>
-                                <option value="Parish 1">Parish 1</option>
-                                <option value="Parish 1">Parish 2</option>
-                                <option value="Parish 1">Parish 3</option>
+                                <option value="St.Catherine">St.Catherine</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">

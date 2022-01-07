@@ -1,14 +1,14 @@
 <?php
+    session_start();
+    session_regenerate_id(true);
     include 'util.php';
     require_once("db.php");
-    session_start();
-    session_regenerate_id();
     if(isset($_SESSION['verified'])){
-        header("Location: {$hostname}/dashboard");
+        exit(header("Location: {$hostname}/dashboard"));
     }
     if(isset($_POST['login'])){
         $email = $conn->real_escape_string(test_input($_POST['email']));
-        $pass = md5(test_input($_POST['password']));
+        $pass = sha1(str_replace("x", "a", md5(test_input($_POST['password']))));
         
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             $sql = "SELECT * FROM users WHERE email = '{$email}' AND password = '{$pass}'";
@@ -16,13 +16,13 @@
             if($result->num_rows == 1){
                 while($row = $result->fetch_assoc()){
                     if($row['verified'] != 1){
-                        header("Location: thankyou.php");
+                        exit(header("Location: thankyou.php"));
                     }else{
                         $_SESSION['uid'] = $row['id'];
                         $_SESSION['username'] = $row['first_name'] . $row['last_name'];
                         $_SESSION['email'] = $row['email'];
                         $_SESSION['verified'] = $row['verified'];
-                        header("Location: {$hostname}/dashboard");
+                        exit(header("Location: {$hostname}/dashboard"));
                     }
                 }
             }else{
