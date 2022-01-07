@@ -11,10 +11,11 @@
         $city = filter_var(test_input($_POST['city']), FILTER_SANITIZE_STRING);
         $parish = filter_var(test_input($_POST['parish']), FILTER_SANITIZE_STRING);
         $trn = test_input($_POST['trn']);
-        $pickup_location = filter_var(test_input($_POST['pickup-location']), FILTER_SANITIZE_STRING);
         $password = test_input($_POST['password']);
         $pass = md5($password);
         $confirm_password = test_input($_POST['confirm-password']);
+
+        $vkey = md5($email . uniqid());
 
         if(!empty($fname)){
             if (preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $fname)){
@@ -68,9 +69,6 @@
         }else{
             $errors['trn_error'] = "Please enter trn";
         }
-        if(empty($pickup_location)){
-            $errors['pickup_error'] = "Please choose a pickup location";
-        }
         if(strlen($password) > 6){
             if($password != $confirm_password){
                 $errors['password_error'] = "Passwords does not match";
@@ -78,8 +76,22 @@
         }else{
             $errors['password_error'] = "Password is too short";
         }
+
+        //INSERT INTO DATABASE
         if(count(array_unique($errors)) === 1) {
-            header("Location: {$hostname}/login.php");
+            require_once("db.php");
+            $sql = "INSERT INTO users (first_name, last_name, email, phone, street_addr, city, parish, trn, password, vkey) VALUES ('{$fname}', '{$lname}', '{$email}', '{$phone}', '{$street_addr}', '{$city}', '{$parish}', '{$trn}', '{$pass}', '{$vkey}')";
+            if($conn->query($sql)){
+                $to = $email;
+                $subject = "Verify your email address";
+                $message = "<h2>Hello, Please click on verify to confirm your registration. Thank you</h2><div style='display: flex; justify-content: center; align-items: center'><a style='color: white; background: tomato; padding: 10px 15px; text-align: center; margin: 30px 0' href='{$hostname}/verify.php?vkey={$vkey}'</div>";
+                $header = "From: khaliexpresscourier@gmail.com";
+                $header .= "Content-Type: text/html";
+
+                if(mail($to, $subject, $message, $header)){
+                    header("Location: thankyou.php");
+                }
+            }
         }
     }
 ?>
@@ -121,15 +133,15 @@
                             <span style="color:orange"><?php if(isset($errors['phone_error'])){ echo $errors['phone_error']; } ?></span>
                             <input type="text" name="phone" placeholder="Telephone (with country code)*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" >
                         </div>
-                        <div class="col-md-4 col-12 p-2 d-flex flex-column justify-content-end">
+                        <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['addr_error'])){ echo $errors['addr_error']; } ?></span>
                             <input type="text" name="street-addr" placeholder="Street Address*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" >
                         </div>
-                        <div class="col-md-4 col-12 p-2 d-flex flex-column justify-content-end">
+                        <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['city_error'])){ echo $errors['city_error']; } ?></span>
                             <input type="text" name="city" placeholder="City*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent">
                         </div>
-                        <div class="col-md-4 col-12 p-2 d-flex flex-column justify-content-end">
+                        <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['parish_error'])){ echo $errors['parish_error']; } ?></span>
                             <select name="parish" class="w-100 outline-none border border-white border-3 p-2 rounded-2">
                                 <option selected value="">Select Parish</option>
@@ -141,15 +153,6 @@
                         <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['trn_error'])){ echo $errors['trn_error']; } ?></span>
                             <input type="text" name="trn" placeholder="TRN*" class="w-100 outline-none border border-white border-3 p-2 rounded-2 bg-transparent" >
-                        </div>
-                        <div class="col-md-6 col-12 p-2 d-flex flex-column justify-content-end">
-                            <span style="color:orange"><?php if(isset($errors['pickup_error'])){ echo $errors['pickup_error']; } ?></span>
-                        <select name="pickup-location" class="w-100 outline-none border border-white border-3 p-2 rounded-2">
-                                <option selected value="">Select Pickup Location</option>
-                                <option value="1">Location 1</option>
-                                <option value="2">Location 2</option>
-                                <option value="3">Location 3</option>
-                            </select>
                         </div>
                         <div class="col-12 p-2 d-flex flex-column justify-content-end">
                             <span style="color:orange"><?php if(isset($errors['password_error'])){ echo $errors['password_error']; } ?></span>
