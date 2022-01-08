@@ -1,3 +1,20 @@
+<?php
+    include "util.php";
+    if(isset($_POST['send'])){
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        print_r($_POST); die();
+        $to = "shahedul872@gmail.com";
+        $header = "From: $email";
+        if(mail($to, $subject, $message, $header)){
+            $success = true;
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -37,7 +54,15 @@
                             <textarea class="w-100  text-white outline-none border border-white border-3 p-2 rounded-2 bg-transparent" name="message" rows="5" id="message" placeholder="Message"></textarea>
                         </div>
                         <div class="col-12 pt-2 d-flex justify-content-center align-items-center">
-                            <input id="sendBtn" type="submit" name="send" value="Send" class="my-2 px-3 py-2 text-bold rounded-pill text-theme-color bg-white outline-none border-0">
+                        <?php 
+                            if(isset($success)){
+                        ?>
+                            <div class="my-2 px-4 py-2 text-bold rounded-pill bg-success outline-none border-0">
+                                <i class="fas fa-check fa-2x text-white"></i>
+                            </div>
+                        <?php  }else{ ?>
+                            <input id="sendBtn" type="submit" name="send" value="Send" class="my-2 px-3 py-2 text-bold rounded-pill text-theme-color bg-white outline-none border-0"> 
+                        <?php } ?>
                         </div>
                     </form>
                     <div class="row pt-5 justify-content-between align-items-center">
