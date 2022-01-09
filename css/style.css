@@ -62,6 +62,15 @@ section{
     color: white;
 }
 
+/* ==================== Contact ===================== */
+#rates{
+    overflow-y: scroll;
+    max-height: 50vh;
+}
+#rates::-webkit-scrollbar{
+    display: none;
+}
+
 /* ==================== Footer ===================== */
 .footer-bg{
     background: #0a060f;

@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 .background-cover{
     background-size: cover!important;
 }

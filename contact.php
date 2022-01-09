@@ -1,12 +1,12 @@
 <?php
     include "util.php";
     if(isset($_POST['send'])){
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
-        print_r($_POST); die();
+        $fname = test_input($_POST['fname']);
+        $lname = test_input($_POST['lname']);
+        $email = filter_var(test_input($_POST['email']), FILTER_SANITIZE_EMAIL);
+        $subject = test_input($_POST['subject']);
+        $message = test_input($_POST['message']);
+        
         $to = "shahedul872@gmail.com";
         $header = "From: $email";
         if(mail($to, $subject, $message, $header)){
