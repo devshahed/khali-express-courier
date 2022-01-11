@@ -37,6 +37,19 @@ section{
 #register, #login{
     min-height: 100vh;
 }
+
+/* ============= Header =================== */
+nav ul li a:hover{
+    color: rgb(226, 77, 77)!important;
+}
+.showNav{
+    transform: translateX(0%);
+}
+.showNav li a{
+    color: white!important;
+    font-size: 1.3rem;
+}
+
 /* ============= Registration =================== */
 #home{
     background: url('../images/banner.png');
@@ -53,7 +66,6 @@ section{
 #register input, #register input::placeholder{
     color: white;
 }
-
 /* ============= Login =================== */
 #login{
     background-image: linear-gradient(#7d00f1d2, #7e0addec), url('../images/registration.jpg');
@@ -73,10 +85,10 @@ section{
     z-index: 100;
 }
 #rates table{
-    min-width: 80vw;
+    min-width: 60vw;
 }
 #rates table tbody{
-    height: 70vh;
+    height: 60vh;
     display: block;
     overflow-y: scroll;
 }
@@ -92,4 +104,21 @@ section{
 }
 .contact-icon{
     font-size: 4rem;
+}
+
+/* ============== Media Query ============== */
+@media only screen and (max-width: 576px) {
+    nav ul{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgb(0, 0, 0);
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+    }
+    #navToggle{
+        z-index: 99;
+    }
 }

@@ -20,3 +20,10 @@ let showRates = ()=>{
     rates.classList.remove('d-none');
     rates.classList.add('d-flex');
 }
+
+const navToggle = document.querySelector("#navToggle");
+const navbar = document.querySelector('nav ul');
+navToggle.addEventListener("click", ()=>{
+    navbar.classList.toggle('showNav');
+    navToggle.classList.toggle('text-white');
+});
