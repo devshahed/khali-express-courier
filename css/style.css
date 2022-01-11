@@ -39,15 +39,27 @@ section{
 }
 
 /* ============= Header =================== */
-nav ul li a:hover{
+nav ul li a:hover, nav ul li a.active{
     color: rgb(226, 77, 77)!important;
 }
 .showNav{
     transform: translateX(0%);
+    
 }
 .showNav li a{
     color: white!important;
     font-size: 1.3rem;
+}
+.showNav li a:hover::before{
+    content: attr(data-name);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.171);
+    font-size:4rem;
+    z-index: -99;
 }
 
 /* ============= Registration =================== */
