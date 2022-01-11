@@ -6,6 +6,7 @@
                 <li class="px-1"><a href="./" class="p-1 text-decoration-none text-theme-color">Home</a></li>
                 <li class="px-1"><a href="./#about" class="p-1 text-decoration-none text-theme-color">About</a></li>
                 <li class="px-1"><a href="/contact.php" class="p-1 text-decoration-none text-theme-color">Contact</a></li>
+                <li class="px-1"><a onclick="showRates()" href="javascript:void(0)" class="p-1 text-decoration-none text-theme-color">Rates</a></li>
                 <li class="px-1"><a href="/login.php" class="p-1 text-decoration-none text-theme-color"><?php
                     if(isset($_SESSION['verified'])){
                         echo "Dashboard";
@@ -15,5 +16,169 @@
                 ?></a></li>
             </ul>
         </nav>
+    </div>
+    <div id="rates" class="d-none justify-content-center align-items-center position-fixed text-white">
+        <table>
+            <thead>
+                <tr class="d-flex justify-content-between align-items-center bg-primary p-3">
+                    <th>Weight (lbs)</th>
+                    <th>Rate (JMD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-theme p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+                <tr class="d-flex justify-content-between align-items-center bg-indigo p-2">
+                    <td>1</td>
+                    <td>$ 550.00</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </header>

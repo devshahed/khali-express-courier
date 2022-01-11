@@ -11,7 +11,7 @@ body{
 header{
     border-bottom: 1px solid rgba(78, 78, 78, 0.198);
     box-shadow: 0px 3px 10px rgba(78, 78, 78, 0.527);
-    z-index: 99999999;
+    z-index: 99;
 }
 nav ul li a, nav p{
     font-weight: 500;
@@ -62,13 +62,23 @@ section{
     color: white;
 }
 
-/* ==================== Contact ===================== */
+/* ==================== About ===================== */
 #rates{
-    overflow-y: scroll;
-    max-height: 50vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.692);
+    z-index: 100;
 }
-#rates::-webkit-scrollbar{
-    display: none;
+#rates table{
+    min-width: 80vw;
+}
+#rates table tbody{
+    height: 70vh;
+    display: block;
+    overflow-y: scroll;
 }
 
 /* ==================== Footer ===================== */
