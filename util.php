@@ -6,7 +6,5 @@
     function test_input($input){
         $data = trim($input);
         $data = stripcslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
+        return htmlspecialchars($data);
     }
-?>

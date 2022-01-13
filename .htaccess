@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+Redirect "/header.php" "/404.html"
+Redirect "/admin-panel/header.php" "/404.html"
+Redirect "/footer.php" "/404.html"
+Redirect "/db.php" "/404.html"
+Redirect "/util.php" "/404.html"
+Redirect "/about.php" "/404.html"
+ErrorDocument 404 "/404.html"

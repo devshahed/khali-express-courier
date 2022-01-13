@@ -2,7 +2,7 @@
     include_once '../util.php';
     include_once '../db.php';
     session_start();
-    session_regenerate_id();
+    session_regenerate_id(true);
     if(isset($_SESSION['username'])){
         exit(header("Location: {$hostname}/admin-panel"));
     }
@@ -37,7 +37,6 @@
     </head>
 
     <body>
-        <?php include_once 'header.php'; ?>
         <main>
             <!-- ================= Login ================ -->
             <section id="login" class="background-no-repeat background-cover background-fixed background-center">
